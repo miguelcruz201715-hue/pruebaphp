@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+
+    background-color: hwb(130 52% 18%);
+
+}
+
+#container {
+   width: 80%;
+   margin: 0px auto;
+   border: 1px solid rgb(0, 0, 0);
+}
+
+#header{
+   height: 110px;
+   background-color: hwb(130 52% 18%);
+   
+}

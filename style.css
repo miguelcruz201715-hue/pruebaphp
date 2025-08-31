@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body{
@@ -37,7 +38,7 @@ body{
 
 #menu{
     clear:both;
-    background-color: #2222;
+    background-color: #490000;
     color: white;
     height: 55px;
     border-bottom: 4px solid #01B1EA;
@@ -169,16 +170,23 @@ input[type="button"],
 }
 
 .product{
-    width: 30%;
-    float: left;
+    max-width: 200px;
+    display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 30px;
     text-align: center;
 }
 
+.contenedor-productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
 .product img{
-    height: 150px;
+    width: 100%;
+    height: auto;
     margin-bottom: 10px;
 }
 

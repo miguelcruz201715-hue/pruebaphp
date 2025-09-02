@@ -54,5 +54,13 @@ CREATE TABLE IF NOT EXISTS t_pedidos(
 
 )ENGINE=Innodb;
 
-
+CREATE TABLE IF NOT EXISTS t_detallePedido(
+    id_detallePedido       int(11)  auto_increment NOT NULL,
+    id_pedido              int(11)                 NOT NULL,
+    id_producto            int(11)                 NOT NULL,
+    unidades               int(100)                NOT NULL,
+    CONSTRAINT      pk_detallePedido               PRIMARY KEY(id_detallePedido),
+    CONSTRAINT      fk_detalle_pedido              FOREIGN KEY(id_pedido) REFERENCES t_pedidos(id_pedido),
+    CONSTRAINT      fk_detalle_producto            FOREIGN KEY(id_producto) REFERENCES  t_productos(id_producto)
+)ENGINE=Innodb;
 

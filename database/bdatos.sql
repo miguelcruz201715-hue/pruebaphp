@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS t_categorias(
 
 INSERT INTO t_categorias VALUE(NULL, 'Construccion'),(NULL,'electricos'),(NULL,'pinturas'),(NULL,'pisos');
 
-CREATE TABLE IF NOT EXISTS t_producto(
+CREATE TABLE IF NOT EXISTS t_productos(
     id_producto         int(11)      auto_increment NOT NULL,
     nombre_producto     varchar(100)                NOT NULL,
     descripcion         varchar(100)                NOT NULL,
@@ -37,6 +37,22 @@ CREATE TABLE IF NOT EXISTS t_producto(
     id_categoria        int(11)                     NOT NULL,             
     CONSTRAINT pk_producto       PRIMARY KEY(id_producto),
     CONSTRAINT fk_producto_categoria     FOREIGN KEY(id_categoria) REFERENCES t_categorias(id_categoria)
-    
+
 )ENGINE=Innodb;
+
+CREATE TABLE IF NOT EXISTS t_pedidos(
+    id_pedido       int(11)  auto_increment NOT NULL,
+    id_usuario      int(11)                 NOT NULL,
+    fecha           date                    NOT NULL,
+    hora            time                    NOT NULL,
+    ciudad          varchar(100)            NOT NULL,
+    direccion       varchar(200)            NOT NULL,
+    costo           float(10,2)             NOT NULL,
+    estado          varchar(20)             NOT NULL,
+    CONSTRAINT      pk_pedidos              PRIMARY KEY(id_pedido),
+    CONSTRAINT      fk_pedido_usuario       FOREIGN KEY(id_usuario) REFERENCES t_usuarios(id_usuario)   
+
+)ENGINE=Innodb;
+
+
 

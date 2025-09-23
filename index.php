@@ -1,11 +1,10 @@
-<h1>Bienvenidos a mi web</h1>
+<h1> Bienvenido a mi mundo </h1>
 
 <?php
 
-require_once 'controllers/usuarioControllers.php';
+require_once 'controllers/UsuarioControllers.php';  
 
-$controlador = new UsuarioControllers();
+$controller = new usuarioControllers();
 
-$controlador->mostrarTodos();
-
+$controller->mostrarTodos();
 

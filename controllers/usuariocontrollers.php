@@ -4,12 +4,13 @@
 class usuarioControllers{
 
     public function mostrarTodos(){
-    require_once 'models/UsuarioModels.php';
+
+   require_once 'models/UsuarioModels.php';
 
     $usuario = new usuario();
 
     $todos_los_usuarios = $usuario ->conseguirTodos();
 
-    require_once 'views/usuario/mostrar-todosphp';
+    require_once 'views/usuario/mostrar-todos.php';
 }
 }
